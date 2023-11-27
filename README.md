@@ -18,9 +18,10 @@ To play the game, run the script. The game will choose a random fruit from the l
 
 ### Game Flow
 1. A random fruit is chosen by the computer from a predefined list.
-2. You are prompted to enter a single letter as your guess.
-3. The game will respond whether your guessed letter is in the word.
-4. Keep guessing letters until you can figure out the fruit or until you run out of guesses.
+1. You are prompted to enter a single letter as your guess.
+1. The game will respond whether your guessed letter is in the word.
+1. Incorrect guesses reduce the number of lives.
+1. Keep guessing letters until you figure out the fruit or run out of lives.
 
 ### Example
 please enter a single letter as a guess: a

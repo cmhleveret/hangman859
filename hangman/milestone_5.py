@@ -1,7 +1,6 @@
 import random
 
 list_of_fruits = ['apple', 'pear', 'banana', 'orange', 'pineapple']
-
 num_lives = 5
 
 class Hangman():
@@ -9,13 +8,10 @@ class Hangman():
         self.word_list = list_of_fruits
         self.num_lives = num_lives
         self.word = random.choice(list_of_fruits)
-        # self.word_guessed = ['_', '_', '_', '_', '_']
         self.num_letters = len(self.word)
         self.list_of_guesses = []
-        #list of underscores with same length as word
         self.word_guessed = ['_' for char in self.word]
         self.input_string = ''
-        print(self.word)
 
     def check_guess(self, input_string):
         input_string = input_string.lower()
@@ -23,12 +19,10 @@ class Hangman():
         if input_string in self.word:
             print(f"Good guess! {input_string} is in the word.")
             self.list_of_guesses.append(input_string)
-
             for index, character in enumerate(self.word):
                 if input_string == self.word[index]:
                     self.word_guessed[index] = character
                     print(self.word_guessed)
-                
             return
         else:
             print(f"Sorry, {input_string} is not in the word. Try again.")
@@ -49,15 +43,12 @@ class Hangman():
                 print("You already tried that letter!")
             else:
                 print(f"Success input string {self.input_string}")
-                is_valid_input = True
-                
+                is_valid_input = True 
         return self.check_guess(self.input_string)
-
 
 def play_game(list_of_fruits, num_lives):
     hangman_game = Hangman(list_of_fruits, num_lives)
     playing = True
-
     while playing:
         if hangman_game.num_lives < 1:
             playing = False
